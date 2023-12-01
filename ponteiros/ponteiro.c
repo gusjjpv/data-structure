@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h> //Ela possui funções envolvendo alocação de memória, controle de processos, conversões e outras.
 
 int main()
 {
