@@ -7,7 +7,7 @@ int main(void){
     // sizeof(tipo);
 
     int a;
-    
+    int *p;
     printf("sizeof(a) = %ld bytes\n", sizeof(a)); //retorna um  unsigned long ent usamos o '%ld'
 
     printf("sizeof(int) = %ld bytes\n", sizeof(int));
@@ -22,6 +22,8 @@ int main(void){
     printf("sizeof(int **) = %ld bytes\n", sizeof(int **));
     printf("sizeof(int ***) = %ld bytes\n", sizeof(int ***));
     printf("sizeof(float *) = %ld bytes\n", sizeof(float *));
+    printf("sizeof(ponteiro *) = %ld bytes\n", sizeof(p));
+
 
     return 0;
 }
