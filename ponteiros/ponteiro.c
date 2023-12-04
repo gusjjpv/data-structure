@@ -8,6 +8,12 @@ int main()
     // tipo_apontado * nome_da_variavel_ponteiro;
     // int *ponteiro;
 
+    //tipos de ponteiros:
+    //int *ponteiro_int; ponteiro de inteiro
+    //float *ponteiro_float; ponteiro de real
+    //char *ponteiro _chat; ponteiro de caractere
+    //int **ponteiro_ponteiro_intero // ponteiro de ponteiro inteiro
+
     // printf("O ponteiro: %p \n", ponteiro);
 
     // acesso ao endereço de uma variavel
