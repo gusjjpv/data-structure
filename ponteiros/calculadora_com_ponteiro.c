@@ -30,41 +30,57 @@ int calcula(int x, int y, int (*operacao)(int, int))
 int main(void)
 {
     int escolha, num1, num2, resultado;
-
-    printf("informe a operação:\n1-soma\n2-subtração\n3-multiplicação\n4-divisão");
-    scanf("%d", &escolha);
-
-    printf("Informe os numeros: ");
-    scanf("%d %d", &num1, &num2);
-
-    switch (escolha)
+    do
     {
-    case 1:
+        printf("Escolha a opcao:\n[1]-soma\n[2]-subtracao\n[3]-multiplicacao\n[4]-divisao\n[5]-sair\n");
+        scanf("%d", &escolha);
+        system("cls");
+        switch (escolha)
+        {
+        case 1:
+            printf("Informe o primeiro numero: \n");
+            scanf("%d", &num1);
+            printf("Informe o segundo numero: \n");
+            scanf("%d", &num2);
+            resultado = calcula(num1, num2, soma);
+            printf("Resultado da soma: %d\n", resultado);
+            break;
+        case 2:
+            printf("Informe o primeiro numero: \n");
+            scanf("%d", &num1);
+            printf("Informe o segundo numero: \n");
+            scanf("%d", &num2);
+            resultado = calcula(num1, num2, subtracao);
+            printf("Resultado da subtracao: %d\n", resultado);
+            break;
+        case 3:
+            printf("Informe o primeiro numero: \n");
+            scanf("%d", &num1);
+            printf("Informe o segundo numero: \n");
+            scanf("%d", &num2);
+            resultado = calcula(num1, num2, multiplicacao);
+            printf("Resultado da multiplicacao: %d\n", resultado);
+            break;
+        case 4:
 
-        resultado = calcula(num1, num2, soma);
-        printf("Resultado: %d", resultado);
-        break;
-    case 2:
-
-        resultado = calcula(num1, num2, subtracao);
-        printf("Resultado: %d", resultado);
-        break;
-
-    case 3:
-
-        resultado = calcula(num1, num2, multiplicacao);
-        printf("Resultado: %d", resultado);
-        break;
-
-    case 4:
-
-        resultado = calcula(num1, num2, divisao);
-        printf("Resultado: %d", resultado);
-        break;
-
-    default:
-        printf("Operação invalida");
-        break;
-    }
+            printf("Informe o primeiro numero: \n");
+            scanf("%d", &num1);
+            printf("Informe o segundo numero: \n");
+            scanf("%d", &num2);
+            if (num2 == 0)
+            {
+                printf("ERRO!!! operacao por zero\n");
+                break;
+            }
+            resultado = calcula(num1, num2, divisao);
+            printf("Resultado da divisao: %d\n", resultado);
+            break;
+        case 5:
+            break;
+        default:
+            printf("/nOperação invalida/nEscolha novamente:\n");
+            break;
+        }
+    } while (escolha != 5);
     return 0;
 }
