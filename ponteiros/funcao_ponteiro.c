@@ -1,7 +1,25 @@
 #include <stdio.h>
 
 /*
-        ponteiro para função
+        Usando funçoes com ponteiros
+
+        podemos passar ponteiros como argumentos para uma função. isso permite que a função acesse e modifique o valor de uma variavel fora de sua proprio escopo.
+
+        exemplo na linha 27;
+
+        usando ponteiros como retorno de função. isso permite que uma função retorne um endereço de memoria para uma variavel.
+
+        exemplo na linha 36;
+
+        Ponteiros de função:
+
+        Para declarar um ponteiro de função, vc deve especificar o tipo de retorno da função seguido do nome do ponteiro e o tipo de parametro entre parenteses.
+
+        int (*ponteiroSoma)(int, int);
+
+        são usados para apontar para uma função especifica, permitindo que a função possa ser chamada diretamente. tambem permitem que a função seja passada como parametro para outras funçoes.
+
+
 */
 
 int inc(int *ponteiro)
