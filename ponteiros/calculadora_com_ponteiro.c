@@ -53,7 +53,7 @@ int main(void)
     do
     {
 
-        printf("Escolha a opcaoo:\n[1]-soma\n[2]-subtracao\n[3]-multiplicacao\n[4]-divisao\n[5]-sair\n");
+        printf("\nEscolha a opcao:\n[1]-soma\n[2]-subtracao\n[3]-multiplicacao\n[4]-divisao\n[5]-sair\n");
         scanf("%d", &escolha);
         system("cls");
         switch (escolha)
@@ -62,7 +62,7 @@ int main(void)
             num1 = primeiroNum();
             num2 = segundoNum();
             resultado = calcula(num1, num2, soma);
-            printf("Resultado da soma: %d\n", resultado);
+            printf("\nResultado da soma: %d\n", resultado);
             break;
         case 2:
             num1 = primeiroNum();
