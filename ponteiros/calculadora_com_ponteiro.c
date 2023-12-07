@@ -29,20 +29,16 @@ int calcula(int x, int y, int (*operacao)(int, int))
     return (*operacao)(x, y);
 }
 
-int primeiroNum()
+void pedirNums(int *a, int *b)
 {
-    int a;
+    int x, y;
     printf("Informe o primeiro numero: \n");
-    scanf("%d", &a);
-    return a;
-}
-
-int segundoNum()
-{
-    int a;
+    scanf("%d", &x);
     printf("Informe o segundo numero: \n");
-    scanf("%d", &a);
-    return a;
+    scanf("%d", &y);
+
+    *a = x;
+    *b = y;
 }
 
 int main(void)
@@ -59,27 +55,22 @@ int main(void)
         switch (escolha)
         {
         case 1:
-            num1 = primeiroNum();
-            num2 = segundoNum();
+            pedirNums(&num1, &num2);
             resultado = calcula(num1, num2, soma);
             printf("\nResultado da soma: %d\n", resultado);
             break;
         case 2:
-            num1 = primeiroNum();
-            num2 = segundoNum();
+            pedirNums(&num1, &num2);
             resultado = calcula(num1, num2, subtracao);
             printf("Resultado da subtracao: %d\n", resultado);
             break;
         case 3:
-            num1 = primeiroNum();
-            num2 = segundoNum();
+            pedirNums(&num1, &num2);
             resultado = calcula(num1, num2, multiplicacao);
             printf("Resultado da multiplicacao: %d\n", resultado);
             break;
         case 4:
-
-            num1 = primeiroNum();
-            num2 = segundoNum();
+            pedirNums(&num1, &num2);
             if (num2 == 0)
             {
                 printf("ERRO!!! operacao por zero\n");
