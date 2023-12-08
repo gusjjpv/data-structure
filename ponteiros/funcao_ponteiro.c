@@ -46,3 +46,19 @@ int main()
 
     return 0;
 }
+
+//Exemplo de passagem por referencia:
+//            passa o ponteiro como parametro(no main enviamos o endereço da variavel como parametro(pedirNums(&a,&b);))
+/*void pedirNums(int *a,int *b){
+    int x, y;
+    printf("função\nInforme o primeiro numero: \n");
+    scanf("%d", &x);
+    printf("Informe o segundo numero: \n");
+    scanf("%d", &y);
+
+    *a = x;
+    *b = y;
+}
+
+função que retorna dois valores, por meio dos ponteiros
+*/
