@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int main(void)
 {
     int numQuest, i, j, aprovados = 0;
     float notas = 0.0, qtdAprovados;
