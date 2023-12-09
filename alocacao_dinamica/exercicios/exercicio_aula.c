@@ -10,7 +10,7 @@ int main(void){
     
     int linhas = 5, colunas = 5, i,j; int **matriz = (int **) malloc(linhas * sizeof(int *));for(i = 0; i < linhas; i++){matriz[i] =(int**)malloc(colunas * sizeof(int *));}
 
-    for()
+    
 
     return 0;
 }
