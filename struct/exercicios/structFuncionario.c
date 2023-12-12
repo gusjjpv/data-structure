@@ -1,15 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//declarando a struct renomeando
+// declarando a struct renomeando
 typedef struct funcionario
 {
     char nome[50];
-    int idade;
+    float salario;
+    int identificador;
     char cargo[20];
-    int cpf;
-    int nTelefone;
-    char email[50];
 } Funcionario;
 
 // função para ler os dados do usuario
@@ -17,23 +15,25 @@ void preenche(Funcionario *fun)
 {
     printf("Digite seu nome: ");
     scanf(" %[^\n]", fun->nome);
-    printf("Digite sua idade: ");
-    scanf("%d", &fun->idade);
     printf("Informe seu cargo: ");
     scanf(" %[^\n]", fun->cargo);
-    printf("Digite seu CPF: ");
-    scanf("%d", &fun->cpf);
-    printf("Digite seu telefone: ");
-    scanf("%d", &fun->nTelefone);
-    printf("Digite seu E-mail: ");
-    scanf(" %[^\n]", fun->email);
+    printf("Informe seu salario: ");
+    scanf("%f", &fun->salario);
+    printf("Digite seu identificador: ");
+    scanf("%d", &fun->identificador);
     system("cls"); // limpa tela
 }
 
 // função para imprimir os dados
 void imprime(Funcionario *fun)
 {
-    printf("Nome:%s\nIdade:%d\nCargo:%s\nCPF:%d\nTelefone:%d\nE-mail:%s", fun->nome, fun->idade, fun->cargo, fun->cpf, fun->nTelefone, fun->email);
+    printf("Nome: %s\nCargo: %s\nSalario: %.2f\nIdenteificador: %d", fun->nome, fun->cargo, fun->salario, fun->identificador);
+}
+
+//função para modficar o salario;
+void alterarSalario(Funcionario *fun){
+    printf("Informe o novo salario: ");
+    scanf("%f", &fun->salario);
 }
 
 int main(void)
@@ -49,6 +49,16 @@ int main(void)
     // chamada das funções
     preenche(fun);
     imprime(fun);
+    
+    int escolha;
+
+    printf("\nDeseja alterar o salario?\nSim-[1]\nNao-[2]\nDigite: ");
+    scanf(" %d", &escolha);
+    if(escolha == 1){
+        alterarSalario(fun);
+        printf("Salario novo: %.2f", fun->salario);
+    }
+    
     // liberando memoria aloada;
     free(fun);
 
