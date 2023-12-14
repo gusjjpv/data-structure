@@ -36,8 +36,14 @@ void imprime(struct aluno *estudante)
 int main(void)
 {
 
-    // declaração de variavel tipo estrutura
+    /* declaração de variavel tipo estrutura
+    // tipo   struc  nome da variavel
     // struct aluno estudante;
+    // ou,
+        struct Aluno{
+            char nome[100];
+            int idade;
+        } barney, ted;   //ja declara 
     // para acessar um parametro
     // usamos o operador de acesso '.'
     /* printf("Digite o nome do aluno: \n");

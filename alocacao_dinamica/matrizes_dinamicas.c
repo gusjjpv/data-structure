@@ -29,6 +29,14 @@ int main(void)
         puts("");
     }
 
+    //desalocando
 
+    for(int i = 0; i < nlinhas; i++){
+        free(mat[i]);
+    }
+    free(mat);
+
+    mat = NULL; // boa pratica 
+    
     return 0;
 }
