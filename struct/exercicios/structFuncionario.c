@@ -51,11 +51,14 @@ void alterarSalario(Funcionario *fun, int numAlterar)
 
 void maxMinSalario(Funcionario *fun, int tamanho)
 {
-    int i, maxSalario = fun[0].salario, minSalario = fun[0].salario;
+    int i;
+    float maxSalario = fun[0].salario, minSalario = fun[0].salario;
+
     for (i = 0; i < tamanho; i++)
     {
         if (fun[i].salario > maxSalario)
         {
+            printf("enntrou na funçao");
             maxSalario = 0;
             maxSalario = maxSalario + fun[i].salario;
         }
@@ -66,8 +69,7 @@ void maxMinSalario(Funcionario *fun, int tamanho)
         }
     }
 
-    printf("Maior salario: %f\nMenor Salario: %f", maxSalario,minSalario);
-
+    printf("Maior salario: %.2f\nMenor Salario: %.2f", maxSalario, minSalario);
 }
 
 int main(void)
