@@ -31,12 +31,11 @@ void preenche(Funcionario *fun, int tamanho)
 
 // função para imprimir os dados
 void imprime(Funcionario *fun, int tamanho)
-{   
-    system("cls");
+{
     int i;
     for (i = 0; i < tamanho; i++)
     {
-        printf("\n--Dados do %d° funcionario--", i+1);
+        printf("\n--Dados do %d° funcionario--", i + 1);
         printf("\nNome: %s\nCargo: %s\nSalario: %.2f\nIdenteificador: %d", fun[i].nome, fun[i].cargo, fun[i].salario, fun[i].identificador);
     }
 }
@@ -44,8 +43,31 @@ void imprime(Funcionario *fun, int tamanho)
 // função para modficar o salario;
 void alterarSalario(Funcionario *fun, int numAlterar)
 {
+    numAlterar = numAlterar - 1;
     printf("Informe o novo salario: ");
     scanf("%f", &fun[numAlterar].salario);
+    printf("Novo salario do funcionario id:%d: %.2f", fun->identificador, fun->salario);
+}
+
+void maxMinSalario(Funcionario *fun, int tamanho)
+{
+    int i, maxSalario = fun[0].salario, minSalario = fun[0].salario;
+    for (i = 0; i < tamanho; i++)
+    {
+        if (fun[i].salario > maxSalario)
+        {
+            maxSalario = 0;
+            maxSalario = maxSalario + fun[i].salario;
+        }
+        else if (fun[i].salario < minSalario)
+        {
+            minSalario = 0;
+            minSalario = minSalario + fun[i].salario;
+        }
+    }
+
+    printf("Maior salario: %f\nMenor Salario: %f", maxSalario,minSalario);
+
 }
 
 int main(void)
@@ -68,19 +90,18 @@ int main(void)
     preenche(fun, numFuncionarios);
     imprime(fun, numFuncionarios);
 
-    
-
     printf("\nDeseja alterar o salario?\nSim-[1]\nNao-[2]\nDigite: ");
     scanf("%d", &escolha);
     if (escolha == 1)
-    {   
+    {
         printf("Qual funcionario deseja alterar o salario?");
         scanf("%d", &funALterar);
-        funALterar = funALterar-1;
-        alterarSalario(fun,funALterar);
-        printf("Novo salario do funcionario id:%d: %.2f", fun->identificador,fun->salario);
-        imprime(fun,numFuncionarios);
+
+        alterarSalario(fun, funALterar);
+        imprime(fun, numFuncionarios);
     }
+
+    maxMinSalario(fun, numFuncionarios);
 
     // liberando memoria aloada;
     free(fun);

@@ -50,7 +50,8 @@ void imprime(Professor *prof)
 
 int main(void)
 {
-    struct professor *prof = (struct professor *)malloc(sizeof(struct professor));
+    //podemos fazer assim pq renomeamos com o typedef
+    Professor *prof = (Professor*)malloc(sizeof(Professor));
     if (prof == NULL)
     {
         exit(1);
