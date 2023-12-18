@@ -53,8 +53,8 @@ int main()
     int *p2;
 
     p1 = &a;
-    p2 = p1; // aq, o p2 esta guardando o valor que o pq esta amazenando, que é o endereço do a. ent ele n esta armazenando o endereço do p1, e sim o valor que p1 esta armazenando
-    *p2 = 4; // ele vai alterar o condeudo do endereço que esta armazenado em p2, no exemplo p2 esta armazenando o endereço de a(foi passado pela atribuição do p1 ao p2), que tem o conteudo armazenado 10, que foi alterado para 4, ent o conteudo de p2 é 4 e p1 tbm, pq ele tem o conteudo de a.
+    p2 = p1; // aq, o p2 esta guardando o valor que o p1 esta amazenando, que é o endereço do a. ent ele n esta armazenando o endereço do p1, e sim o valor que p1 esta armazenando
+    *p2 = 4; // ele vai alterar o conteudo do endereço que esta armazenado em p2, no exemplo p2 esta armazenando o endereço de a(foi passado pela atribuição do p1 ao p2), que tem o conteudo armazenado 10, que foi alterado para 4, ent o conteudo de p2 é 4 e p1 tbm, pq ele tem o endereço e conteudo de a.
 
     return 0;
 }
