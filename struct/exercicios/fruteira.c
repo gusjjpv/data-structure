@@ -5,7 +5,6 @@
 
 typedef struct frutas
 {
-
     char nome[20];
     char cor[20];
     char sabor[200];
@@ -23,21 +22,18 @@ int qtdFrutasCad(int quantidade)
     return quantidade;
 }
 
-void cadastroFrutas(Frutas *frutas, int tamanho)
+void cadastroFrutas(Frutas *frutas, int i)
 {
-    int i;
-    for (i = 0; i < tamanho; i++)
-    {
-        printf("Informe o nome da fruta: ");
-        scanf(" %[^\n]", frutas[i].nome);
-        printf("Informe a cor da fruta: ");
-        scanf(" %[^\n]", frutas[i].cor);
-        printf("Informe o sabor da fruta: ");
-        scanf(" %[^\n]", frutas[i].sabor);
-        printf("Informe a quantidade da fruta: ");
-        scanf("%d", &frutas[i].quantidade);
-        system("cls");
-    }
+    printf("Informe os dados da fruta: \n");
+    printf("Nome: ");
+    scanf(" %[^\n]", frutas[i].nome);
+    printf("Cor: ");
+    scanf(" %[^\n]", frutas[i].cor);
+    printf("Sabor: ");
+    scanf(" %[^\n]", frutas[i].sabor);
+    printf("Quantidade: ");
+    scanf("%d", &frutas[i].quantidade);
+    system("cls");
 }
 
 void imprimir(Frutas *frutas, int tamanho)
@@ -50,7 +46,7 @@ void imprimir(Frutas *frutas, int tamanho)
 }
 
 void mostrasFrutasCad(Frutas *frutas, int tamanho)
-{   
+{
     int i;
     printf("Frutas cadastradas: \n");
     for (i = 0; i < tamanho; i++)
@@ -73,14 +69,12 @@ void buscaFruta(Frutas *frutas, int tamanho, char nome[])
 
 int main(void)
 {
-
-    int qtdFrutas, busca;
-    char nome[20];
-
-    qtdFrutas = qtdFrutasCad(qtdFrutas);
-
     setlocale(LC_ALL, "Portuguese");
 
+    int qtdFrutas=0, busca = 0, cadNovaFruta = 0;
+    char nome[20];
+
+    // qtdFrutas = qtdFrutasCad(qtdFrutas);
 
     // alocando memoria para o vetor de struct
     Frutas *frutas = (Frutas *)malloc(qtdFrutas * sizeof(Frutas));
@@ -89,9 +83,19 @@ int main(void)
         printf("Memoria insuficiente");
         exit(1);
     }
-
-    cadastroFrutas(frutas, qtdFrutas);
-    imprimir(frutas, qtdFrutas);
+    do
+    {
+        cadastroFrutas(frutas, qtdFrutas);
+        imprimir(frutas, qtdFrutas);
+        printf("\nDeseja cadastrar uma nova fruta?\n[1]-Sim\n[2]-Nao\n");
+        scanf("%d", &cadNovaFruta);
+        if (cadNovaFruta == 1)
+        {
+            qtdFrutas++;
+            frutas = (Frutas *)realloc(frutas, qtdFrutas * sizeof(Frutas));
+        }
+        system("cls");
+    } while (cadNovaFruta == 1);
 
     printf("\nDeseja buscar uma fruta?\n[1]-Sim\n[2]-Não");
     scanf("%d", &busca);
