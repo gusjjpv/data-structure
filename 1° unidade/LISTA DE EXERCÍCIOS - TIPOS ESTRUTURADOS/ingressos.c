@@ -16,15 +16,25 @@ void imprime_menor_maior_preco(int n, Ingresso *vet);
 int main(void)
 {
 
-    int num_ingressos;
+    int num_ingressos, escolha = 0;
     printf("Informe o numero de ingressos:");
     scanf("%d", &num_ingressos);
 
     Ingresso *ingressos = (Ingresso *)malloc(num_ingressos * sizeof(Ingresso));
+    
     preenche(ingressos, num_ingressos);
     imprime(ingressos, num_ingressos);
-    altera_preco(ingressos, ingressos->preco);
+    
+    printf("\nDeseja alterar o preço de algum ingresso? 1 - sim 0 - não\n");
+    scanf("%d", &escolha);
+    if (escolha == 1)
+    {
+        altera_preco(ingressos, ingressos->preco);
+        imprime(ingressos, num_ingressos);
+    }
+    
     imprime_menor_maior_preco(num_ingressos, ingressos);
+    
     return 0;
 }
 
@@ -41,6 +51,7 @@ void preenche(Ingresso *i, int tamanho)
         printf("Informe a atração:");
         scanf(" %[^\n]", i[j].atracao);
     }
+    system("cls");
 }
 
 void imprime(Ingresso *i, int tamanho)
@@ -60,9 +71,10 @@ void altera_preco(Ingresso *i, float valor)
     printf("informe o numero do ingresso que deseja alterar o preço:");
     scanf("%d", &indexIngresso);
     indexIngresso--;
-    printf("Informe o novo salario:");
+    printf("Informe o novo preço:");
     scanf("%f", &valor);
     i[indexIngresso].preco = valor;
+    system("cls");
 }
 
 void imprime_menor_maior_preco(int n, Ingresso *vet)
