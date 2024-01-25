@@ -38,6 +38,8 @@ int main(void)
     
     imprime_menor_maior_preco(num_ingressos, ingressos);
     
+    free(ingressos);
+
     return 0;
 }
 
