@@ -21,6 +21,9 @@ int main(void)
     scanf("%d", &num_ingressos);
 
     Ingresso *ingressos = (Ingresso *)malloc(num_ingressos * sizeof(Ingresso));
+    if(ingressos == NULL){
+        exit(1);
+    }
     
     preenche(ingressos, num_ingressos);
     imprime(ingressos, num_ingressos);
