@@ -5,6 +5,7 @@ JUNHO, JULHO, AGOSTO, SETEMBRO, OUTUBRO, NOVEMBRO e DEZEMBRO. O programa
 deve ler a data e imprimir a data no formato dd/mm/aaaa.
 */
 
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -40,7 +41,7 @@ void lerData(Data *p){
 }
 
 void imprimirData(Data *p){
-    printf("%d/%u/%d",p->dia, p->mes,p->ano);
+    printf("%s%d/%s%d/%d", p->dia < 10 ? "0" : "", p->dia, p->mes < 10 ? "0" : "", p->mes, p->ano);
 }
 
 int main(void)
