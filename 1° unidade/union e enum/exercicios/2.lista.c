@@ -79,7 +79,10 @@ void imprimirDados(Produto *p)
 int main()
 {
     Produto *produto = (Produto *)malloc(sizeof(Produto));
-
+    if(produto == NULL){
+        exit(1);
+    }
+    
     lerDados(produto);
     imprimirDados(produto);
 
