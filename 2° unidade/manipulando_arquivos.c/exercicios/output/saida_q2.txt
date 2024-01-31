@@ -1,0 +1,3 @@
+Maior: 4201264
+Menor: 1
+Media: 7.90
