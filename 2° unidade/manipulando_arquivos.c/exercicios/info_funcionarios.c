@@ -14,7 +14,7 @@ int main(void)
 
     FILE *saidaFuncionarios;
     
-    saidaFuncionarios = fopen("saidaFuncionarios.txt", "wt");
+    saidaFuncionarios = fopen("saidaFuncionarios.txt", "w");
 
     if (saidaFuncionarios == NULL)
     {
@@ -35,7 +35,7 @@ int main(void)
     scanf("%f", &salario);
     fprintf(saidaFuncionarios, "Salario: %.2f\n", salario);
 
-    if(!fclose(saidaFuncionarios) == NULL)
+    if(!fclose(saidaFuncionarios))
     {
         printf("Arquivos fechado com sucesso.\n");
     }
