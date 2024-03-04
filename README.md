@@ -23,9 +23,12 @@ Desta forma, você pode navegar facilmente pelo repositório, selecionando o con
 - _[Manipulação de Arquivos][5]_
 - _[TAD][6]_
 
+#### Projeto feito na unidade:
+- _[Busca por interpolação][7]_
+
 ### 3° Unidade
 
-- _[Listas Encadeadas][7]_
+- _[Listas Encadeadas][8]_
 
 [1]: https://github.com/gusjjpv/data-structure/tree/main/1%C2%B0%20unidade/ponteiros
 [2]: https://github.com/gusjjpv/data-structure/tree/main/1%C2%B0%20unidade/alocacao_dinamica
@@ -33,7 +36,9 @@ Desta forma, você pode navegar facilmente pelo repositório, selecionando o con
 [4]: https://github.com/gusjjpv/data-structure/tree/main/1%C2%B0%20unidade/union%20e%20enum
 [5]: https://github.com/gusjjpv/data-structure/tree/main/2%C2%B0%20unidade/manipulando_arquivos.c
 [6]: https://github.com/gusjjpv/data-structure/tree/main/2%C2%B0%20unidade/TAD
-[7]: https://github.com/gusjjpv/data-structure/tree/main/3%C2%B0%20unidade/listas%20encadeadas
+[7]: https://github.com/classroom-ufersa/buscaPorInterpolacaoClientes
+[8]: https://github.com/gusjjpv/data-structure/tree/main/3%C2%B0%20unidade/listas%20encadeadas
+
 
 ## Como usar
 
