@@ -9,3 +9,4 @@ void exibir_dados(Aluno * estudante);
 void liberar_memoria(Aluno * estudante);
 
 //função que matricula alunos
+void matricular_aluno(Aluno * estudante);

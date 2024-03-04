@@ -38,3 +38,15 @@ void exibir_dados(Aluno * estudante){
 void liberar_memoria(Aluno * estudante){
     free(estudante);
 }
+
+void matricular_aluno(Aluno * estudante){
+    Aluno *aluno = (Aluno *)malloc(sizeof(Aluno));
+    if (aluno == NULL)
+    {   
+        printf("Erro ao alocar memória!\n");
+        exit(1);
+    }
+
+     *recebe_dados()
+
+}
