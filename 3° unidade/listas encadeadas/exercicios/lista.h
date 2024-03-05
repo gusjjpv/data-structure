@@ -26,3 +26,6 @@ void verificar_lista_vazia(Lista *l);
 
 /* função para busca elemento na lista*/
 Lista *busca_lista(Lista *lista, int valor);
+
+/* função que retira um elemento da lista*/
+Lista *retira_lista(Lista *lista, int valor);

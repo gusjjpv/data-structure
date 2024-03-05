@@ -55,3 +55,28 @@ Lista *busca_lista(Lista *lista, int valor)
     }
     return NULL;
 }
+
+Lista *retira_lista(Lista *lista, int valor)
+{
+    Lista *anterior = cria_lista();
+    Lista *p = lista;
+    while (p != NULL && p->informacao != valor)
+    {
+        anterior = p;
+        p = p->prox_elemento;
+    }
+    if (p == NULL)
+    {
+        return lista;
+    }
+    if (anterior == NULL)
+    {
+        lista = p->prox_elemento;
+    }
+    else
+    {
+        anterior->prox_elemento = p->prox_elemento;
+    }
+    free(p);
+    return lista;
+}
