@@ -1,8 +1,37 @@
-/* TAD : Tipo Abstrato de Dados*/
+Conteúdo da aula:
 
-/* TAD: um novo tipo (struct) + cojunto de operaÃ§Ãµes*/
+1- O TAD é uma abordagem de programação que permite a definição de tipos de dados abstratos.
 
-/* Aquivo cabeÃ§alho: aluno.h */
+2- Permite o encapsulamento do código.
+   Vantagens: facilitar a manutenção e a colaboração do código.
+              oferecer uma interface clara para o usuário e programadores ao simplificar o código.
 
-//execicios : implementar uma funÃ§Ã£o que exibe os dados e uma que libera; 
-// faÃ§a uma funÃ§Ã£o que recebe dados de diversos alunos
+3- Modularização do código:
+Uma vez definido um TAD, ele pode ser usado em várias partes do programa.
+Assim, na implementação do um programa poderá ter um ou mais módulos.
+
+Exemplo com TAD: 
+    int main(){
+        empilhar(10);
+        empilhar(20);
+
+        printf("Elemento desempilhado: %d\n", desempilhar());
+
+        return 0;
+    }
+
+Exemplo sem TAD:
+    int main(){
+        Pilha minhaPilha;
+        inicializarPilha(&minhaPilha);
+
+        empilhar(&minhaPilha, 10);
+        empilhar(&minhaPilha, 20);
+
+        printf("Elemento desempilhado: %d\n", desempilhar(&minhaPilha));
+
+        return 0;
+    }      
+
+4- Podemos fazer comentários nas funções dos módulos.
+            
