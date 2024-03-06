@@ -28,18 +28,24 @@ Lista *insere_lista(Lista *lista, int valor)
     return novo_no;
 }
 
-void imprime(Lista* l){
-    Lista* contador;
-    for(contador = l; contador!=NULL; contador = contador->prox_elemento){
+void imprime(Lista *l)
+{
+    Lista *contador;
+    for (contador = l; contador != NULL; contador = contador->prox_elemento)
+    {
         printf("%d\t", contador->informacao);
     }
 }
 
-void verificar_lista_vazia(Lista* l){
-    if(l == NULL){
-        printf("Lista vazia");
-    }else{
-        printf("existe itens na lista");
+void verificar_lista_vazia(Lista *l)
+{
+    if (l == NULL)
+    {
+        printf("Lista vazia\n");
+    }
+    else
+    {
+        printf("existe itens na lista\n");
     }
 }
 
@@ -51,6 +57,11 @@ Lista *busca_lista(Lista *lista, int valor)
         if (p->informacao == valor)
         {
             printf("\nelemento encontrado: %d", p->informacao);
+            return 0;
+        }
+        else
+        {
+            printf("\nelemento não encontrado");
         }
     }
     return NULL;
@@ -79,4 +90,36 @@ Lista *retira_lista(Lista *lista, int valor)
     }
     free(p);
     return lista;
+}
+
+int maiores(Lista *l, int n)
+{
+    Lista *p;
+    int vezes = 0;
+    for (p = l; p != NULL; p = p->prox_elemento)
+    {
+        if (p->informacao == n)
+        {
+            vezes++;
+        }
+    }
+    return vezes;
+}
+
+Lista *ultimo(Lista *l)
+{
+    Lista *p;
+    for (p = l; p != NULL; p = p->prox_elemento)
+    {
+        if (p->prox_elemento == NULL)
+        {
+            return p;
+        }
+    }
+    return NULL;
+}
+
+Lista *concatena(Lista *l1, Lista *l2)
+{
+    
 }

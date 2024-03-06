@@ -29,3 +29,12 @@ Lista *busca_lista(Lista *lista, int valor);
 
 /* função que retira um elemento da lista*/
 Lista *retira_lista(Lista *lista, int valor);
+
+/* Função que retorna o numero de nós*/
+int maiores(Lista *l, int n);
+
+/* Função que retorna o numero de nós*/
+Lista* ultimo(Lista *l);
+
+/* função para concatenar */
+Lista* concatena(Lista* l1, Lista* l2);
