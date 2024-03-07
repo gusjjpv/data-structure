@@ -1,0 +1,6 @@
+===== Budega do chico bala =====
+maca    12.00
+===== Budega do chico bala =====
+banana    34.00
+===== Budega do chico bala =====
+melao    34.00

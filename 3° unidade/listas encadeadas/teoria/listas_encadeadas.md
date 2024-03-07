@@ -4,7 +4,7 @@ Listas encadeadas são estruturas de dados fundamentais na programação que per
 
 Para criar uma lista encadeada em C, você primeiro precisa definir a estrutura de um nó. Aqui está um exemplo simples para uma lista encadeada de inteiros:
 
-```
+```c
 struct lista
 {
     int informacao;

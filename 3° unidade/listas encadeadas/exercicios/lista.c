@@ -28,98 +28,55 @@ Lista *insere_lista(Lista *lista, int valor)
     return novo_no;
 }
 
-void imprime(Lista *l)
-{
-    Lista *contador;
-    for (contador = l; contador != NULL; contador = contador->prox_elemento)
-    {
-        printf("%d\t", contador->informacao);
+void imprime(Lista* l){
+    Lista* contador;
+    for(contador = l; contador!=NULL; contador = contador->prox_elemento){
+        printf("%d ", contador->informacao);
     }
 }
 
-void verificar_lista_vazia(Lista *l)
-{
-    if (l == NULL)
-    {
-        printf("Lista vazia\n");
-    }
-    else
-    {
-        printf("existe itens na lista\n");
-    }
-}
-
-Lista *busca_lista(Lista *lista, int valor)
-{
+Lista *busca_lista(Lista *lista, int valor){
     Lista *p;
-    for (p = lista; p != NULL; p = p->prox_elemento)
-    {
+    int cont = 0;
+    for (p = lista; p != NULL; p = p->prox_elemento){
         if (p->informacao == valor)
         {
-            printf("\nelemento encontrado: %d", p->informacao);
-            return 0;
-        }
-        else
-        {
-            printf("\nelemento não encontrado");
+            cont = cont + 1;
         }
     }
+    printf("\nO valor %d aparece %d vezes na lista\n", valor, cont);
+    // não achou o elemento
     return NULL;
 }
 
-Lista *retira_lista(Lista *lista, int valor)
-{
-    Lista *anterior = cria_lista();
-    Lista *p = lista;
-    while (p != NULL && p->informacao != valor)
-    {
+Lista* ultimo(Lista* l){
+    Lista* p;
+    for(p = l; p->prox_elemento != NULL; p = p->prox_elemento);
+    return p;
+}
+
+Lista* concatena(Lista* l1, Lista* l2){
+    Lista* p;
+    for(p = l1; p->prox_elemento != NULL; p = p->prox_elemento);
+    p->prox_elemento = l2;
+    return l1;
+}
+
+Lista* retira_n(Lista* l, int n){
+    Lista* anterior = NULL;
+    Lista* p = l;
+    while(p != NULL && p->informacao != n){
         anterior = p;
         p = p->prox_elemento;
     }
-    if (p == NULL)
-    {
-        return lista;
+    if(p == NULL){
+        return l;
     }
-    if (anterior == NULL)
-    {
-        lista = p->prox_elemento;
-    }
-    else
-    {
+    if(anterior == NULL){
+        l = p->prox_elemento;
+    }else{
         anterior->prox_elemento = p->prox_elemento;
     }
     free(p);
-    return lista;
-}
-
-int maiores(Lista *l, int n)
-{
-    Lista *p;
-    int vezes = 0;
-    for (p = l; p != NULL; p = p->prox_elemento)
-    {
-        if (p->informacao == n)
-        {
-            vezes++;
-        }
-    }
-    return vezes;
-}
-
-Lista *ultimo(Lista *l)
-{
-    Lista *p;
-    for (p = l; p != NULL; p = p->prox_elemento)
-    {
-        if (p->prox_elemento == NULL)
-        {
-            return p;
-        }
-    }
-    return NULL;
-}
-
-Lista *concatena(Lista *l1, Lista *l2)
-{
-    
+    return l;
 }

@@ -1,40 +1,26 @@
-
 typedef struct lista Lista;
 
-/*  função que inicializa a lista atribuindo NULL
-    retorna: lista inicializada*/
+/*  função que inicializa a lista atribuindo NULL*/
 Lista *cria_lista(void);
 
-/*  função que insere elementos inteiros na lista
-    argumentos:
-    Lista * lista;
-    int valor: valor inteiro a ser inserido
-    retorno:
-    nova lista*/
+/*  função que insere elementos inteiros na lista*/
+
 Lista *insere_lista(Lista *lista, int valor);
 
 /* imprime os valores da lista */
-void imprime(Lista *l);
+void imprime(Lista* l);
 
-/*  Função que vereficar se uma lista está vazia
-    argumentos:
-    Lista * lista: lista a ser verificada
-    retorno:
-    1: se a lista estiver vazia
-    0: se a lista não estiver vazia*/
-void verificar_lista_vazia(Lista *l);
+/* Função que vereficar se uma osita está vazia */
+void lista_vazia(Lista *lista);
 
-/* função para busca elemento na lista*/
+/*  */
 Lista *busca_lista(Lista *lista, int valor);
 
-/* função que retira um elemento da lista*/
-Lista *retira_lista(Lista *lista, int valor);
+/* função que retornar o ultimo nó da lista*/
+Lista *ultimo(Lista* l);
 
-/* Função que retorna o numero de nós*/
-int maiores(Lista *l, int n);
+/*função para concatenar listaas*/
+Lista *contatena(Lista* l1, Lista* l2);
 
-/* Função que retorna o numero de nós*/
-Lista* ultimo(Lista *l);
-
-/* função para concatenar */
-Lista* concatena(Lista* l1, Lista* l2);
+/*Lista para remover ocorrencias de n*/
+Lista *retira_n(Lista* l, int n);

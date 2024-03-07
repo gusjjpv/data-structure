@@ -1,49 +1,29 @@
 #include "lista.c"
 
-int main(void)
-{
-    Lista *lista_encadeada = cria_lista();
-    Lista *lista2 = cria_lista();
-
-    int valor;
-    // inserindo o valor 3 na lista encadeada
-    while (1)
-    {
-        while (1)
-        {
-            printf("\nDigite um valor para inserir na lista encadeada: ");
-            scanf("%d", &valor);
-            if (valor == 0)
-            {
-                break;
-            }
-            lista_encadeada = insere_lista(lista_encadeada, valor);
-        }
-
-        verificar_lista_vazia(lista_encadeada);
-
-        imprime(lista_encadeada);
-
-        printf("\nDigite um valor para remover da lista encadeada: ");
+int main(void){
+    Lista * lista_encadeada = cria_lista();
+    Lista * lista_encadeada2 = cria_lista();
+    //inserindo o valor 3 na lista encadeada
+    while(1){
+        int valor;
+        printf("Digite um valor para inserir na lista encadeada: ");
         scanf("%d", &valor);
-        retira_lista(lista_encadeada, valor);
-
-        imprime(lista_encadeada);
-
-        printf("\nDigite um valor para buscar na lista encadeada: ");
-        scanf("%d", &valor);
-        if (valor == 0)
-        {
+        if (valor == 0){
             break;
         }
-        busca_lista(lista_encadeada, valor);
-
-        printf("\nDigite um valor para verificar quantos valores iguais a ele existem na lista encadeada: ");
-        scanf("%d", &valor);
-        int vezes = 0;
-        vezes = maiores(lista_encadeada, valor);
-        printf("%d", vezes);
+        lista_encadeada = insere_lista(lista_encadeada, valor);
     }
-
-    return 0;
+    lista_encadeada2 = insere_lista(lista_encadeada2, 44);
+    int busca;
+    printf("Digite um valor para buscar na lista encadeada: ");
+    scanf("%d", &busca);
+    busca_lista(lista_encadeada, busca);
+    Lista * no;
+    no = ultimo(lista_encadeada);
+    printf("\nendereco de memoria do ultimo no: %p\n", no);
+    imprime(lista_encadeada);
+    concatena(lista_encadeada, lista_encadeada2);
+    retira_n(lista_encadeada, 10);
+    printf("\n");
+    imprime(lista_encadeada);
 }

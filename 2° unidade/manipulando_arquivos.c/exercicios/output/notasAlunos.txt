@@ -1,0 +1,21 @@
+
+===== Aluno =====
+Nome: gus
+===== Notas =====
+Nota 1: 2.00
+Nota 2: 3.00
+Nota 3: 4.00
+
+===== Aluno =====
+Nome: joao
+===== Notas =====
+Nota 1: 5.00
+Nota 2: 7.00
+Nota 3: 2.00
+
+===== Aluno =====
+Nome: maria
+===== Notas =====
+Nota 1: 9.00
+Nota 2: 3.00
+Nota 3: 4.00
