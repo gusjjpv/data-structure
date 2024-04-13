@@ -56,3 +56,6 @@ Para compilar qualquer um dos programas em C neste repositório, você pode usar
 ```bash
  gcc nome_do_programa.c -o nome_do_programa && nome_do_programa
 ```
+
+# Agradecimentos
+Gostaria de agradecer a Professora e Doutora Rosana Cibely Batista Rego pelo apoio e orientação durante o longo desta disciplina.
