@@ -1,11 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "lista.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 struct lista
 {
-    int informacao;
-    Lista *prox_elemento;
+    int info;
+    Lista *prox;
 };
 
 Lista *cria_lista(void)
@@ -13,70 +13,137 @@ Lista *cria_lista(void)
     return NULL;
 }
 
-Lista *insere_lista(Lista *lista, int valor)
+Lista *insere_elemento(Lista *lista, int valor)
 {
-    // aloca novo nó da lista encadeada
     Lista *novo_no = (Lista *)malloc(sizeof(Lista));
+
     if (novo_no == NULL)
     {
         exit(1);
     }
-    // Adiciona o vlaor no campo informação
-    novo_no->informacao = valor;
-    // conecta o novo nó a lista
-    novo_no->prox_elemento = lista;
+
+    novo_no->info = valor;
+    novo_no->prox = lista;
+
     return novo_no;
 }
 
-void imprime(Lista* l){
-    Lista* contador;
-    for(contador = l; contador!=NULL; contador = contador->prox_elemento){
-        printf("%d ", contador->informacao);
+void imprime(Lista *lista_encadeada)
+{
+
+    Lista *contador;
+
+    for (contador = lista_encadeada; contador != NULL; contador = contador->prox)
+    {
+        printf("%d\t\n", contador->info);
     }
 }
 
-Lista *busca_lista(Lista *lista, int valor){
-    Lista *p;
-    int cont = 0;
-    for (p = lista; p != NULL; p = p->prox_elemento){
-        if (p->informacao == valor)
+int lista_vazia(Lista *lista)
+{
+
+    if (lista == NULL)
+    {
+        printf("Lista vazia! ");
+        return 1;
+    }
+    else
+    {
+        printf("Lista não vazia! ");
+        return 0;
+    }
+}
+
+Lista *buscar_elemento(Lista *lista, int valor)
+{
+
+    Lista *ponteiro;
+
+    for (ponteiro = lista; ponteiro != NULL; ponteiro->prox)
+    {
+        if (ponteiro->info == valor)
         {
-            cont = cont + 1;
+            return ponteiro;
         }
     }
-    printf("\nO valor %d aparece %d vezes na lista\n", valor, cont);
-    // não achou o elemento
     return NULL;
 }
 
-Lista* ultimo(Lista* l){
-    Lista* p;
-    for(p = l; p->prox_elemento != NULL; p = p->prox_elemento);
-    return p;
+Lista *Retirar_elemento(Lista *lista, int valor)
+{
+
+    Lista *ponteiro = lista;
+    Lista *anterior = ponteiro;
+
+    while (ponteiro != NULL && ponteiro->info != valor)
+    {
+        anterior = ponteiro;
+        ponteiro = ponteiro->prox;
+    }
+
+    if (ponteiro == NULL)
+    {
+        return lista;
+    }
+
+    if (anterior == NULL)
+    {
+        lista = ponteiro->prox;
+    }
+    else
+    {
+        anterior->prox = ponteiro->prox;
+    }
+
+    free(ponteiro);
+    return lista;
 }
 
-Lista* concatena(Lista* l1, Lista* l2){
-    Lista* p;
-    for(p = l1; p->prox_elemento != NULL; p = p->prox_elemento);
-    p->prox_elemento = l2;
-    return l1;
+void liberar_lista(Lista *linha)
+{
+    Lista *ponteiro = linha;
+    while (ponteiro != NULL)
+    {
+        Lista *t = ponteiro->prox;
+        free(ponteiro);
+        ponteiro = t;
+    }
+
+    printf("Lista liberada!");
 }
 
-Lista* retira_n(Lista* l, int n){
-    Lista* anterior = NULL;
-    Lista* p = l;
-    while(p != NULL && p->informacao != n){
-        anterior = p;
-        p = p->prox_elemento;
+int maiores(Lista *lista, int n)
+{
+
+    Lista *ponteiro;
+    int numeros = 0;
+
+    for (ponteiro = lista; ponteiro != NULL; ponteiro->prox)
+    {
+
+        if (ponteiro->info > n)
+        {
+            numeros++;
+            return numeros;
+        }
     }
-    if(p == NULL){
-        return l;
+    return 0;
+}
+
+Lista *ultimo(Lista *lista)
+{
+
+    Lista *ponteiro = lista;
+    Lista *anterior = NULL;
+
+    while (ponteiro != NULL)
+    {
+        anterior = ponteiro;
+        ponteiro = ponteiro->prox;
     }
-    if(anterior == NULL){
-        l = p->prox_elemento;
-    }else{
-        anterior->prox_elemento = p->prox_elemento;
+
+    if (ponteiro == NULL)
+    {
+        return lista;
     }
-    free(p);
-    return l;
 }

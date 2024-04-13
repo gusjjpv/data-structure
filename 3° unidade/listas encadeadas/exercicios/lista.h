@@ -1,26 +1,51 @@
+#ifndef LISTA_H
+#define LISTA_H
+
+/*
+Definição de um novo tipo: Lista
+*/
 typedef struct lista Lista;
 
-/*  função que inicializa a lista atribuindo NULL*/
+/*
+Função que inicializa a lista atribuindo NULL
+*/
 Lista *cria_lista(void);
 
-/*  função que insere elementos inteiros na lista*/
+/*
+Função que insere elemento inteiro na lista
+Argumentos:
+    Lista * lista;
+    int valor: valor inteiro a ser inserido
+Retorno:
+    Nova Lista
+*/
+Lista *insere_elemento(Lista *lista, int valor);
 
-Lista *insere_lista(Lista *lista, int valor);
+/*
+Função que imprime na tela os elementos de uma lista ordenada
+*/
+void imprime(Lista *lista_encadeada);
 
-/* imprime os valores da lista */
-void imprime(Lista* l);
+/*
+Função que verifica se há elementos armazenados na lista
+*/
+int lista_vazia(Lista *lista);
 
-/* Função que vereficar se uma osita está vazia */
-void lista_vazia(Lista *lista);
+/*
+Função busca: busca um elemento na lista
+*/
+Lista *buscar_elemento(Lista *lista, int valor);
 
-/*  */
-Lista *busca_lista(Lista *lista, int valor);
+/* Função que retira um elemento da lista 
+*/
+Lista *Retirar_elemento(Lista *lista, int valor);
 
-/* função que retornar o ultimo nó da lista*/
-Lista *ultimo(Lista* l);
+/* Função que libera memória alocada dinâmicamente para a struct Pilha
+ */
+void liberar_lista(Lista *linha);
 
-/*função para concatenar listaas*/
-Lista *contatena(Lista* l1, Lista* l2);
+int maiores(Lista *lista, int n);
 
-/*Lista para remover ocorrencias de n*/
-Lista *retira_n(Lista* l, int n);
+Lista *ultimo(Lista *lista);
+
+#endif
