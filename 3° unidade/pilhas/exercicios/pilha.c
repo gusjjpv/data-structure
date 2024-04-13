@@ -1,8 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "pilha.h"
+#include "stdio.h"
+#include "stdlib.h"
 
-#define N 50 // Tamanho maximo de elementos na pilha
+#define N 50
 
 struct pilha
 {
@@ -13,6 +13,7 @@ struct pilha
 Pilha *pilha_cria(void)
 {
     Pilha *p = (Pilha *)malloc(sizeof(Pilha));
+
     p->n = 0;
     return p;
 }
@@ -21,7 +22,7 @@ void pilha_push(Pilha *p, float v)
 {
     if (p->n == N)
     {
-        printf("Capacidade da pilha estourou.\n");
+        printf("Capacidade da pilha estourou\n");
         exit(1);
     }
     p->vet[p->n] = v;
@@ -35,13 +36,16 @@ int pilha_vazia(Pilha *p)
 
 float pilha_pop(Pilha *p)
 {
+    float v;
     if (pilha_vazia(p))
     {
         printf("Pilha vazia.\n");
         exit(1);
     }
+
+    v = p->vet[p->n - 1];
     p->n--;
-    return p->vet[p->n];
+    return v;
 }
 
 void pilha_libera(Pilha *p)
@@ -49,11 +53,20 @@ void pilha_libera(Pilha *p)
     free(p);
 }
 
-void pilha_imprime(Pilha *p)
+void imprime_pilha(Pilha *p)
 {
-    int i;
-    for (i = p->n - 1; i >= 0; i--)
+
+    if (pilha_vazia(p))
     {
-        printf("%f\n", p->vet[i]);
+        printf("Pilha vazia! ");
+        return;
     }
+
+    printf("Elementos da pilha! ");
+    for (int i = p->n - 1; i >= 0; i--)
+    {
+        printf("\n%.2f\t\n", p->vet[i]);
+    }
+
+    printf("\n");
 }

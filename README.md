@@ -1,6 +1,6 @@
 # Estrutura de Dados 1 em C <img align="right" width="110" height="170" src="https://assecom.ufersa.edu.br/wp-content/uploads/sites/24/2014/09/PNG-bras%C3%A3o-Ufersa.png">
 
-Este repositório contém meus estudos e projetos relacionados à disciplina de Estrutura de Dados 1, utilizando a linguagem de programação C.
+Este repositório contém meus estudos e projetos relacionados à disciplina de Estrutura de Dados 1, utilizando a linguagem de programação C. 
 
 ## Organização do Repositório
 
@@ -22,6 +22,7 @@ Desta forma, você pode navegar facilmente pelo repositório, selecionando o con
 
 - _[Manipulação de Arquivos][5]_
 - _[TAD][6]_
+- _[Complexidade de algoritmos][12]_
 
 #### Projeto feito na unidade:
 - _[Busca por interpolação][7]_
@@ -29,6 +30,11 @@ Desta forma, você pode navegar facilmente pelo repositório, selecionando o con
 ### 3° Unidade
 
 - _[Listas Encadeadas][8]_
+- _[Pilhas][9]_
+- _[Filas][10]_
+
+### Projeto feito na unidade:
+- _[Gerenciamento de Clínica Geral][11]_
 
 [1]: https://github.com/gusjjpv/data-structure/tree/main/1%C2%B0%20unidade/ponteiros
 [2]: https://github.com/gusjjpv/data-structure/tree/main/1%C2%B0%20unidade/alocacao_dinamica
@@ -38,7 +44,10 @@ Desta forma, você pode navegar facilmente pelo repositório, selecionando o con
 [6]: https://github.com/gusjjpv/data-structure/tree/main/2%C2%B0%20unidade/TAD
 [7]: https://github.com/classroom-ufersa/buscaPorInterpolacaoClientes
 [8]: https://github.com/gusjjpv/data-structure/tree/main/3%C2%B0%20unidade/listas%20encadeadas
-
+[9]: https://github.com/gusjjpv/data-structure/tree/main/3%C2%B0%20unidade/pilhas
+[10]: https://github.com/gusjjpv/data-structure/tree/main/3%C2%B0%20unidade/filas
+[11]: https://github.com/classroom-ufersa/GerenciamentoDeClinicaGeral
+[12]: https://github.com/gusjjpv/data-structure/tree/main/2%C2%B0%20unidade/complexidade_algoritmo
 
 ## Como usar
 
