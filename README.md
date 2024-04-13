@@ -1,4 +1,4 @@
-# Estrutura de Dados 1 em C <img align="right" width="110" height="170" src="https://assecom.ufersa.edu.br/wp-content/uploads/sites/24/2014/09/PNG-bras%C3%A3o-Ufersa.png">
+# Estrutura de Dados I <img align="right" width="110" height="170" src="https://assecom.ufersa.edu.br/wp-content/uploads/sites/24/2014/09/PNG-bras%C3%A3o-Ufersa.png">
 
 Este repositório contém meus estudos e projetos relacionados à disciplina de Estrutura de Dados 1, utilizando a linguagem de programação C. 
 
